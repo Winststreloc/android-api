@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidAPI", "AndroidAPI\AndroidAPI.csproj", "{3EC16416-70FE-4BD3-861A-D725B91C7D8B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".heroku", ".heroku", "{3DAA96C2-7E4B-4B34-B57B-FCF95EB3F42D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
