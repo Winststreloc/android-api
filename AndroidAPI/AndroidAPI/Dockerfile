@@ -5,10 +5,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["AndroidAPI/AndroidAPI.csproj", "AndroidAPI/"]
-RUN dotnet restore "AndroidAPI/AndroidAPI.csproj"
+COPY ["AndroidAPI.csproj", "."]
+RUN dotnet restore "./AndroidAPI.csproj"
 COPY . .
-WORKDIR "/src/AndroidAPI"
+WORKDIR "/src/."
 RUN dotnet build "AndroidAPI.csproj" -c Release -o /app/build
 
 FROM build AS publish
@@ -17,4 +17,4 @@ RUN dotnet publish "AndroidAPI.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-CMD ["dotnet", "AndroidAPI.dll"]
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet AndroidAPI.dll
