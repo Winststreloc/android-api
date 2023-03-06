@@ -1,0 +1,8 @@
+name: Heroku Build
+  
+uses: behe/heroku-build@v1.2
+
+with:
+    app-name: android-api
+    api-key: c19e4ba3-8c4f-40c5-93e3-55a5f239f8a9
+    path: .
